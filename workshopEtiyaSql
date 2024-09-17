@@ -1,0 +1,45 @@
+select * from Suppliers
+where supplierid BETWEEN 1 and 5
+--
+--
+select * from Suppliers
+where supplierid BETWEEN 1 and 5
+and supplierid != 3
+--
+--
+select * from Products
+where productname = 'Chang' or productname = 'Aniseed Syrup'
+--
+--
+select * from Products
+where supplierid = 3  and unitprice > 10
+--
+--
+SELECT (productname || ' ' || unitprice ) as'Product Names' , 'Fiyat'   FROM Products
+--
+--
+SELECT *
+FROM Products
+WHERE UPPER(productname) LIKE '%C%';
+--
+--
+SELECT *
+FROM Products
+WHERE LENGTH(productname) - LENGTH(REPLACE(productname, 'n', '')) = 1;
+--
+--
+SELECT *
+FROM Products
+WHERE unitsinstock > 50
+--
+--
+SELECT 
+    MAX(unitprice) AS MaxPrice,
+    MIN(unitprice) AS MinPrice
+FROM 
+    Products;
+--
+--
+SELECT *
+FROM Products
+WHERE productname like '%spice%'
