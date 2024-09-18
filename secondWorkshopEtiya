@@ -1,0 +1,123 @@
+SELECT categoryid, COUNT(*) AS urun_sayisi
+FROM products
+GROUP BY categoryid;
+--
+--
+SELECT *
+FROM Products
+ORDER BY unitprice desc
+LIMIT 5;
+--
+--
+SELECT supplierid, AVG(unitprice) AS ortalama_fiyat
+FROM Products
+GROUP BY supplierid;
+--
+--
+SELECT supplierid, AVG(unitprice) AS ortalama_fiyat
+FROM Products
+WHERE unitprice > 100
+GROUP BY categoryid;
+--
+--
+SELECT *
+FROM 'Order Details'
+WHERE (unitprice * quantity) > 1000;
+--
+--
+SELECT *
+FROM Orders
+ORDER BY shippeddate DESC
+LIMIT 10;
+--
+--
+select AVG(unitprice) as 'Ortalama Fiyat' 
+from products
+--
+--
+SELECT SUM(unitsinstock) AS 'stok'
+FROM Products
+WHERE unitprice > 50;
+--
+--
+SELECT *
+FROM orders
+ORDER BY shippeddate ASC
+LIMIT 1;
+--
+--
+"Employees" tablosundaki çalışanların kaç yıl önce işe başladıklarını gösteren bir sorgu yazın.
+UNSUCCESFULL
+--
+--
+SELECT 'Order Details',
+       ROUND(SUM(unitprice)) AS toplam_birim_fiyat
+FROM 'Order Details'
+GROUP BY orderid;
+--
+--
+SELECT COUNT(UnitsInStock) AS stok_adedi
+FROM Products
+WHERE UnitsInStock > 0;
+--
+--
+SELECT MIN(unitprice) AS en_dusuk_fiyat,
+       MAX(unitprice) AS en_yuksek_fiyat
+FROM Products;
+--
+--
+"Orders" tablosunda her yıl kaç sipariş alındığını listeleyin (YEAR() fonksiyonunu kullanarak).
+UNSUCCESFULL
+--
+--
+SELECT CONCAT(FirstName, ' ', LastName) AS tam_ad
+FROM Employees;
+--
+--
+SELECT City, LENGTH(City) AS city_uzunlugu
+FROM Customers;
+--
+--
+SELECT ROUND(UnitPrice, 2) AS yuvarlanmis_fiyat
+FROM Products;
+--
+--
+SELECT COUNT(*) AS toplam_siparis
+FROM Orders;
+--
+--
+SELECT CategoryID, 
+       AVG(UnitPrice) AS ortalama_fiyat
+FROM Products
+GROUP BY CategoryID;
+--
+--
+SELECT 
+    (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM Orders)) AS shipped_date_bos_yuzde
+FROM Orders
+WHERE ShippedDate IS NULL;
+--
+--
+SELECT MAX(UnitPrice) AS en_pahali_fiyat,
+       MAX(UnitPrice) * 1.10 AS artirilmis_fiyat
+FROM Products;
+--
+--
+SELECT SUBSTRING(ProductName, 1, 3) AS ilk_uc_karakter
+FROM Products;
+--
+--
+"Orders" tablosunda verilen siparişlerin yıl ve ay bazında kaç sipariş alındığını hesaplayın (YEAR ve MONTH fonksiyonları).
+UNSUCCESFULL
+--
+--
+SELECT ROUND(UnitPrice * Quantity, 2) AS toplam_siparis_degeri
+FROM 'Order Details';
+--
+--
+SELECT SUM(UnitPrice) AS toplam_fiyat
+FROM Products
+WHERE UnitsInStock = 0;
+
+
+
